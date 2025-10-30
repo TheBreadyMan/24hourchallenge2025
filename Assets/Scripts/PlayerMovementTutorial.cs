@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovementTutorial : MonoBehaviour
 {
     private float playerSpeed = 5.0f;
+    private float playerSprintSpeed = 10f;
     private float jumpHeight = 1.5f;
     private float gravityValue = -9.81f;
 
@@ -21,6 +22,7 @@ public class PlayerMovementTutorial : MonoBehaviour
     [Header("Input Actions")]
     public InputActionReference moveAction; // expects Vector2
     public InputActionReference jumpAction; // expects Button
+    public InputActionReference sprintAction;
 
     private void Awake()
     {
@@ -31,12 +33,14 @@ public class PlayerMovementTutorial : MonoBehaviour
     {
         moveAction.action.Enable();
         jumpAction.action.Enable();
+        sprintAction.action.Enable();
     }
 
     private void OnDisable()
     {
         moveAction.action.Disable();
         jumpAction.action.Disable();
+        sprintAction.action.Disable();
     }
 
     public void Start()
@@ -53,6 +57,8 @@ public class PlayerMovementTutorial : MonoBehaviour
         Movement();
         Jump();
 
+        
+
     }
 
     public void Jump()
@@ -68,7 +74,18 @@ public class PlayerMovementTutorial : MonoBehaviour
 
     public void Movement()
     {
-        
+
+        if(sprintAction.action.IsPressed())
+        {
+            playerSpeed = playerSprintSpeed;
+        }
+        else
+        {
+
+            playerSpeed = 5f;
+
+        }
+
         if (controller.isGrounded && playerVelocity.y < 0)
         {
             playerVelocity.y = 0f;
@@ -85,4 +102,6 @@ public class PlayerMovementTutorial : MonoBehaviour
         Vector3 finalMove = (move * playerSpeed) + (playerVelocity.y * Vector3.up);
         controller.Move(finalMove * Time.deltaTime);
     }
+
+    
 }

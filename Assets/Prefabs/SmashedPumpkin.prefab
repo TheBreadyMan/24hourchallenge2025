@@ -220,7 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 017d8143878059449a131448a06a9ded, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BrokenForm: {fileID: 3700166723091453413, guid: c67bd48f644f5ce4b971665b9cde91cf, type: 3}
+  BrokenForm: {fileID: 9198738651605589887, guid: 4035ba89e519c804e91984174f18df86, type: 3}
   Self: {fileID: 9135799780325955232}
   BrokenVfx: {fileID: 0}
   panicScore: {fileID: 0}

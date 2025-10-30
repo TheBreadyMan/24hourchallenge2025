@@ -5,9 +5,9 @@ public class KiillSelf : MonoBehaviour
 {
     public GameObject BrokenSelf;
 
-    public Transform BrokenCenter;
+    //public Transform BrokenCenter;
 
-    public Rigidbody BrokenBody;
+    //public Rigidbody BrokenBody;
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
