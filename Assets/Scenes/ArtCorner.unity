@@ -370,7 +370,7 @@ SpriteRenderer:
   m_Size: {x: 20, y: 15}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &31572825
@@ -16319,7 +16319,7 @@ SpriteRenderer:
   m_Size: {x: 20, y: 15}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &971440570
@@ -19225,7 +19225,7 @@ SpriteRenderer:
   m_Size: {x: 20, y: 15}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1416899039
@@ -20578,7 +20578,7 @@ SpriteRenderer:
   m_Size: {x: 20, y: 15}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1571327786
@@ -26957,6 +26957,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9043722817503094880, guid: 72a879671e8d7584bbdd56c6b4db3bd1, type: 3}
   m_PrefabInstance: {fileID: 1909110353}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1936200654
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 2652ff6715bd44842b978e0a498ec799, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 502.09714
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2652ff6715bd44842b978e0a498ec799, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.3300874
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2652ff6715bd44842b978e0a498ec799, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 488.2389
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2652ff6715bd44842b978e0a498ec799, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2652ff6715bd44842b978e0a498ec799, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2652ff6715bd44842b978e0a498ec799, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2652ff6715bd44842b978e0a498ec799, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2652ff6715bd44842b978e0a498ec799, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2652ff6715bd44842b978e0a498ec799, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2652ff6715bd44842b978e0a498ec799, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2652ff6715bd44842b978e0a498ec799, type: 3}
+      propertyPath: m_Name
+      value: Bat
+      objectReference: {fileID: 0}
+    - target: {fileID: 3566390031902043909, guid: 2652ff6715bd44842b978e0a498ec799, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 8258c89f38ed7f74d92cd6d618a72768, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2652ff6715bd44842b978e0a498ec799, type: 3}
 --- !u!1001 &1936815747
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33271,3 +33332,4 @@ SceneRoots:
   - {fileID: 1416899039}
   - {fileID: 606026980}
   - {fileID: 709393404}
+  - {fileID: 1936200654}
