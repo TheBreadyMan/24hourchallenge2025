@@ -24,12 +24,7 @@ public class DebugScript : MonoBehaviour
     {
 
 
-        if (PlayerDebug.IsPressed())
-        {
-            panic.PanicValue = 100;
-            panic.UpdatePanic();
 
-        }
         
     }
 }
