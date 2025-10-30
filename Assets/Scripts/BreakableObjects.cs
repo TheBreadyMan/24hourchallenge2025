@@ -22,8 +22,8 @@ public class BreakableObjects : MonoBehaviour
             Instantiate(BrokenForm, pos, rot);
             //BreakSource.Play();
             //Instantiate(BrokenVfx);
-            //panicScore.PanicValue = panicScore.PanicValue + 10;
-            //panicScore.UpdatePanic(); 
+            panicScore.PanicValue = panicScore.PanicValue + 10;
+            panicScore.UpdatePanic(); 
 
             Destroy(gameObject);
         }
