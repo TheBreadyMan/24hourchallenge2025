@@ -24,7 +24,7 @@ public class KiillSelf : MonoBehaviour
 
         yield return new WaitForSeconds(5);
 
-        Destroy(BrokenSelf);
+        //Destroy(BrokenSelf);
 
     }
     
