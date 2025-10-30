@@ -10,6 +10,7 @@ public class CamLook : MonoBehaviour
     public float Ysens;
 
     public Transform CamOrien;
+    public Transform PlayerBody;
 
 
     float xRot;
@@ -59,8 +60,12 @@ public class CamLook : MonoBehaviour
 
         yRot += mouseX;
         xRot -= mouseY;
+        xRot = Mathf.Clamp(xRot, -90f, 90f);
 
-        transform.rotation = Quaternion.Euler(xRot, yRot, 0);
+        transform.localRotation = Quaternion.Euler(xRot, 0, 0);
+
+        PlayerBody.rotation = Quaternion.Euler(0, yRot, 0);
+
         CamOrien.rotation = Quaternion.Euler(0, yRot, 0);
     }
 

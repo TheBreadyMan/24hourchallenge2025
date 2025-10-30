@@ -49,6 +49,7 @@ public class PanicMeter : MonoBehaviour
         {
 
             Timer = Timer - Time.deltaTime;
+            TimerSlider.value = Timer;
 
             if (Timer <= 0 )
             {

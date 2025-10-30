@@ -59,7 +59,7 @@ public class PlayerMovementTutorial : MonoBehaviour
     {
 
         // Jump
-        if (jumpAction.action.triggered && groundedPlayer)
+        if (jumpAction.action.triggered && controller.isGrounded)
         {
             playerVelocity.y = Mathf.Sqrt(jumpHeight * -2.0f * gravityValue);
         }
@@ -68,22 +68,15 @@ public class PlayerMovementTutorial : MonoBehaviour
 
     public void Movement()
     {
-        groundedPlayer = controller.isGrounded;
-        if (groundedPlayer && playerVelocity.y < 0)
+        
+        if (controller.isGrounded && playerVelocity.y < 0)
         {
             playerVelocity.y = 0f;
         }
 
         // Read input
         Vector2 input = moveAction.action.ReadValue<Vector2>();
-        Vector3 move = (Orientation.forward * input.y + Orientation.right * input.x);
-        move = Vector3.ClampMagnitude(move, 1f);
-
-        if (move != Vector3.zero)
-        {
-            transform.forward = move;
-        }
-
+        Vector3 move = (Orientation.forward * input.y + Orientation.right * input.x).normalized;
 
         // Apply gravity
         playerVelocity.y += gravityValue * Time.deltaTime;
