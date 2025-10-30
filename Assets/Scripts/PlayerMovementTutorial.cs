@@ -49,6 +49,25 @@ public class PlayerMovementTutorial : MonoBehaviour
 
     void Update()
     {
+
+        Movement();
+        Jump();
+
+    }
+
+    public void Jump()
+    {
+
+        // Jump
+        if (jumpAction.action.triggered && groundedPlayer)
+        {
+            playerVelocity.y = Mathf.Sqrt(jumpHeight * -2.0f * gravityValue);
+        }
+
+    }
+
+    public void Movement()
+    {
         groundedPlayer = controller.isGrounded;
         if (groundedPlayer && playerVelocity.y < 0)
         {
@@ -65,11 +84,6 @@ public class PlayerMovementTutorial : MonoBehaviour
             transform.forward = move;
         }
 
-        // Jump
-        if (jumpAction.action.triggered && groundedPlayer)
-        {
-            playerVelocity.y = Mathf.Sqrt(jumpHeight * -2.0f * gravityValue);
-        }
 
         // Apply gravity
         playerVelocity.y += gravityValue * Time.deltaTime;

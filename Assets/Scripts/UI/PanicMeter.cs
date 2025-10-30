@@ -61,4 +61,12 @@ public class PanicMeter : MonoBehaviour
         }
 
     }
+
+
+    public void UpdatePanic()
+    {
+
+        PanicSlider.value = PanicValue;
+
+    }
 }
