@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4784698116082112191}
   - component: {fileID: 1889967042813794293}
   - component: {fileID: 7075973781420419815}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: jackoLantern
   m_TagString: Untagged
   m_Icon: {fileID: 0}
