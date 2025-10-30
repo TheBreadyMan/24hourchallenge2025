@@ -9,6 +9,9 @@ public class BreakableObjects : MonoBehaviour
     public GameObject Self;
     public GameObject BrokenVfx;
 
+
+    public PanicMeter panicScore;
+
     #endregion
 
     #region Audio
@@ -21,7 +24,13 @@ public class BreakableObjects : MonoBehaviour
 
     #endregion
 
+    private void Start()
+    {
+        
+        
 
+
+    }
 
 
     void OnCollisionEnter(Collision collision)
@@ -29,9 +38,12 @@ public class BreakableObjects : MonoBehaviour
         if (collision.relativeVelocity.magnitude > 5)
         {
 
-            Instantiate(BrokenForm);
+            Instantiate(BrokenForm, Self.transform);
             BreakSource.Play();
             //Instantiate(BrokenVfx);
+
+            panicScore.PanicValue = panicScore.PanicValue + 10;
+            panicScore.UpdatePanic(); 
 
             Destroy(Self);
 

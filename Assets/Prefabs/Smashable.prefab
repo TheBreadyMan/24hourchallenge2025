@@ -126,6 +126,7 @@ MonoBehaviour:
   BrokenForm: {fileID: 0}
   Self: {fileID: 9135799780325955232}
   BrokenVfx: {fileID: 0}
+  panicScore: {fileID: 0}
   BreakSound: {fileID: 8300000, guid: 108c1f6127451c04980440ebe245b4b9, type: 3}
   BreakSource: {fileID: 5193389711804367465}
 --- !u!82 &5193389711804367465
