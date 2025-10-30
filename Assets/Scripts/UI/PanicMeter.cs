@@ -1,80 +1,44 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
+using System.Linq;
 
 public class PanicMeter : MonoBehaviour
 {
-    #region Float Values
+    //[SerializeField] private Slider lightning;
+    List<GameObject> Goals = new List<GameObject>();
+    private int totalGoal;
 
-    public float PanicValue;
-    public float MaxPanicValue;
-
-    public float Timer;
-
-
-    #endregion
-
-    #region Bools
-
-    public bool timeStart;
-
-    #endregion
-
-    #region UI Elements
-
-    public Slider PanicSlider;
-    public Slider TimerSlider;
-
-    #endregion
-
-
-
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        //Debug.Log(lightning = GetComponent<Slider>());
 
-        TimerSlider.maxValue = Timer;
-        TimerSlider.value = Timer;
+        Goals.AddRange(GameObject.FindGameObjectsWithTag("Goal"));
+        totalGoal = Goals.Count;
 
-        PanicSlider.maxValue = MaxPanicValue;
-        PanicSlider.value = PanicValue;
-        
+        //lightning.value = 0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        if(timeStart == true)
+        foreach (var goal in Goals.ToList()) // Create a copy of the list to avoid modification during iteration
         {
-
-            Timer = Timer - Time.deltaTime;
-            TimerSlider.value = Timer;
-
-            if (Timer <= 0  && PanicValue >= (MaxPanicValue *0.5))
+            if (goal == null)
             {
-
-                SceneManager.LoadScene("YouWin");
-
-
+                Goals.Remove(goal);
             }
-            else if (Timer <= 0  && PanicValue <= (MaxPanicValue * 0.5))
-            {
-
-                SceneManager.LoadScene("YouLose");
-
-            }
-
         }
 
-    }
+        Debug.Log(Goals.Count);
+        float destroyedGoals = totalGoal - Goals.Count;
 
+        //lightning.value = destroyedGoals / totalGoal;
 
-    public void UpdatePanic()
-    {
-
-        PanicSlider.value = PanicValue;
-
+        if (Goals.Count == 0)
+        {
+            SceneManager.LoadScene("YouWin");
+        }
     }
 }
