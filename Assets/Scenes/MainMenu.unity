@@ -302,6 +302,39 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6387180401619592489, guid: 7d33f28c6c7802249ac09f7d79f07776, type: 3}
   m_PrefabInstance: {fileID: 59802231}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &59802234 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4372847514143272768, guid: 7d33f28c6c7802249ac09f7d79f07776, type: 3}
+  m_PrefabInstance: {fileID: 59802231}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &59802235 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4734236506528511818, guid: 7d33f28c6c7802249ac09f7d79f07776, type: 3}
+  m_PrefabInstance: {fileID: 59802231}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &59802236 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6760697684422220535, guid: 7d33f28c6c7802249ac09f7d79f07776, type: 3}
+  m_PrefabInstance: {fileID: 59802231}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &84025555
 GameObject:
   m_ObjectHideFlags: 0
@@ -1081,7 +1114,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: TestingPickUp
+          m_StringArgument: FinalLevel
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1074213930
@@ -1285,6 +1318,7 @@ GameObject:
   - component: {fileID: 1150502841}
   - component: {fileID: 1150502840}
   - component: {fileID: 1150502839}
+  - component: {fileID: 1150502844}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1304,15 +1338,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23ba6390b048547459e8ad74886670ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MasterAudio: {fileID: 0}
-  SFXAudio: {fileID: 0}
-  MusicAudio: {fileID: 0}
+  MasterAudio: {fileID: 59802236}
+  SFXAudio: {fileID: 59802235}
+  MusicAudio: {fileID: 59802234}
   MasterAudioSource: {fileID: 0}
   SFXAudioSource: {fileID: 0}
   MusicAudioSource: {fileID: 0}
-  MasterMixerGroup: {fileID: 0}
-  MusicGroup: {fileID: 0}
-  SFXGroupMusic: {fileID: 0}
+  MasterMixerGroup: {fileID: 24100000, guid: 8ce1ae151bb72e4498d8652e9fdcdf0b, type: 2}
+  MusicGroup: {fileID: 24100000, guid: 8ce1ae151bb72e4498d8652e9fdcdf0b, type: 2}
+  SFXGroupMusic: {fileID: 24100000, guid: 8ce1ae151bb72e4498d8652e9fdcdf0b, type: 2}
   OptionsMenuObject: {fileID: 59802232}
   PauseMenu: {fileID: 352641058}
 --- !u!114 &1150502840
@@ -1400,6 +1434,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1150502844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150502838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9697cbd97e311aa4abe3e53618bd1cdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1439187492
 GameObject:
   m_ObjectHideFlags: 0
