@@ -20,6 +20,7 @@ namespace UnityStandardAssets.Utility // This is a modified version of the Stand
         private float OldAngularDamping = 1f;
         private GameObject HeldObject;
         private float GrabCooldownTimer = 0f;
+        private bool FirstLoop = true;
 
         public PlayerInput _playerInput;
         public InputAction PlayerPickUp;
@@ -36,7 +37,6 @@ namespace UnityStandardAssets.Utility // This is a modified version of the Stand
         {
             if (GrabCooldownTimer > 0)
             {
-                //Debug.Log(GrabCooldownTimer);
                 GrabCooldownTimer -= Time.deltaTime;
                 return;
             }
@@ -49,30 +49,25 @@ namespace UnityStandardAssets.Utility // This is a modified version of the Stand
 
             var mainCamera = Camera.main;
 
-            // We need to actually hit an object
             RaycastHit hit = new RaycastHit();
             if (!Physics.Raycast(mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()).origin, mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()).direction, out hit, 3, Physics.DefaultRaycastLayers))
             {
                 return;
             }
 
-            // We need to hit a rigidbody that is not kinematic
-            if (!hit.rigidbody || hit.rigidbody.isKinematic)
+            if (!hit.rigidbody || hit.rigidbody.isKinematic) // We need to hit a rigidbody that is not kinematic
             {
                 return;
             }
 
             if (!GrabSpringJoint)
             {
-                var go = new GameObject("Rigidbody dragger");
+                var go = new GameObject("Rigidbody Dragger");
                 Rigidbody body = go.AddComponent<Rigidbody>();
                 GrabSpringJoint = go.AddComponent<SpringJoint>();
                 body.isKinematic = true;
-                // parent Rigidbody dragger to the box
-                //go.transform.parent = box;
             }
 
-            //GrabSpringJoint.transform.position = hit.point;
             HeldObject = hit.transform.gameObject;
             GrabSpringJoint.transform.position = hit.transform.gameObject.GetComponent<Renderer>().bounds.center;
             GrabSpringJoint.anchor = Vector3.zero;
@@ -81,8 +76,14 @@ namespace UnityStandardAssets.Utility // This is a modified version of the Stand
             GrabSpringJoint.damper = c_DamperForce;
             GrabSpringJoint.maxDistance = c_MaxDistance;
             GrabSpringJoint.connectedBody = hit.rigidbody;
-            OldLinearDamping = GrabSpringJoint.connectedBody.linearDamping;
-            OldAngularDamping = GrabSpringJoint.connectedBody.angularDamping;
+
+            if (FirstLoop)
+            {
+                OldLinearDamping = GrabSpringJoint.connectedBody.linearDamping;
+                OldAngularDamping = GrabSpringJoint.connectedBody.angularDamping;
+                FirstLoop = false;
+            }
+
             StartCoroutine("DragThrowObject", hit.distance);
         }
 
@@ -92,46 +93,43 @@ namespace UnityStandardAssets.Utility // This is a modified version of the Stand
             {
                 distance = c_MinDistance;
             }
-            GrabSpringJoint.connectedBody.linearDamping = c_LinearDamping;
-            GrabSpringJoint.connectedBody.angularDamping = c_AngularDamping;
             var mainCamera = Camera.main;
+            var rb = GrabSpringJoint.connectedBody;
+
+            rb.linearDamping = c_LinearDamping;
+            rb.angularDamping = c_AngularDamping;
+
 
             while (PlayerPickUp.IsPressed())
             {
-                //Debug.Log("m_sprintJoint " + m_SpringJoint.name);
                 var ray = mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
                 GrabSpringJoint.transform.position = ray.GetPoint(distance);
-                //Debug.Log("Layer: " + m_SpringJoint.transform.gameObject.layer);
                 HeldObject.layer = 6;
-                //Debug.Log("Layer: " + m_SpringJoint.transform.gameObject.layer);
-
-                //m_SpringJoint.transform.GetChild(0).gameObject.layer = LayerMask.NameToLayer("Picked Up");
 
 
                 if (PlayerThrow.IsPressed()) // Throw code. We simply add an impulse force to the object, set its drag back to normal, disconnect it from the spring joint, and stop the coroutine.
                 {
                     Vector3 throwPower = new Vector3(LaunchPower, LaunchPower, LaunchPower);
-                    GrabSpringJoint.connectedBody.AddForce(Vector3.Scale(ray.direction, throwPower), ForceMode.Impulse);
-                    ReleaseDraggedBody();
+                    rb.AddForce(Vector3.Scale(ray.direction, throwPower), ForceMode.Impulse);
+                    ReleaseDraggedBody(rb);
                     yield break;
                 }
                 yield return null;
             }
-            if (GrabSpringJoint.connectedBody)
+            if (rb)
             {
-                ReleaseDraggedBody();
+                ReleaseDraggedBody(rb);
             }
         }
 
-        private void ReleaseDraggedBody()
+        private void ReleaseDraggedBody(Rigidbody rb)
         {
-            GrabSpringJoint.connectedBody.linearDamping = OldLinearDamping;
-            GrabSpringJoint.connectedBody.angularDamping = OldAngularDamping;
+            rb.linearDamping = OldLinearDamping;
+            rb.angularDamping = OldAngularDamping;
             GrabSpringJoint.connectedBody = null;
             HeldObject.layer = 0;
             GrabCooldownTimer = 0.5f;
-            //Debug.Log("Layer: " + m_SpringJoint.transform.gameObject.layer);
-            //m_SpringJoint.transform.gameObject.transform.GetChild(0).gameObject.layer = LayerMask.NameToLayer("Default");
+            FirstLoop = true;
         }
     }
 }
