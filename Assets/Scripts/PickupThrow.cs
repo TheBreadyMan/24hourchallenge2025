@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 namespace UnityStandardAssets.Utility // This is a modified version of the Standard Assets script. The old namespace has been kept.
 {
-    public class DragThrowRigidbody : MonoBehaviour
+    public class PickUpThrow : MonoBehaviour
     {
         const float c_SpringForce = 100.0f;
         const float c_DamperForce = 0.0f;
@@ -20,7 +20,6 @@ namespace UnityStandardAssets.Utility // This is a modified version of the Stand
         private float OldAngularDamping = 1f;
         private GameObject HeldObject;
         private float GrabCooldownTimer = 0f;
-
 
         public PlayerInput _playerInput;
         public InputAction PlayerPickUp;
@@ -44,6 +43,7 @@ namespace UnityStandardAssets.Utility // This is a modified version of the Stand
 
             if (!PlayerPickUp.IsPressed()) //Make sure the user pressed the mouse down
             {
+                Debug.Log("MousePressed");
                 return;
             }
 
