@@ -42,12 +42,12 @@ public class BreakableObjects : MonoBehaviour
             BreakSource.Play();
             //Instantiate(BrokenVfx);
 
-            panicScore.PanicValue = panicScore.PanicValue + 10;
-            panicScore.UpdatePanic(); 
-
-            Destroy(Self);
+            // panicScore.PanicValue = panicScore.PanicValue + 10;
+            //  panicScore.UpdatePanic(); 
 
 
+
+            KillYourSelf();
 
 
         }
@@ -56,6 +56,16 @@ public class BreakableObjects : MonoBehaviour
                 
                 
      }
+
+
+
+
+    public void KillYourSelf()
+    {
+
+        Destroy(gameObject.transform.parent.gameObject);
+
+    }
 
 
 

@@ -221,7 +221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BrokenForm: {fileID: 9198738651605589887, guid: 4035ba89e519c804e91984174f18df86, type: 3}
-  Self: {fileID: 9135799780325955232}
+  Self: {fileID: 4096605151655976835}
   BrokenVfx: {fileID: 0}
   panicScore: {fileID: 0}
   BreakSound: {fileID: 0}
