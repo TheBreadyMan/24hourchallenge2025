@@ -5275,11 +5275,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 370815430070122311, guid: e8059fae8a1c42b4fa6ea1e98684fedf, type: 3}
       propertyPath: m_Height
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 873525466189325100, guid: e8059fae8a1c42b4fa6ea1e98684fedf, type: 3}
       propertyPath: m_Height
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3119499472052709720, guid: e8059fae8a1c42b4fa6ea1e98684fedf, type: 3}
       propertyPath: m_LocalPosition.x
