@@ -1242,7 +1242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17e5ae00a470aef4e8e01628ba9778a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LaunchPower: 0.05
+  LaunchPower: 0.035
   _playerInput: {fileID: 1085687581}
   PlayerPickUp:
     m_Name: Player Pick Up
