@@ -12,7 +12,7 @@ public class OptionsMenu : MonoBehaviour
     #region Player Sliders
 
     public Slider MasterAudio;
-    public Slider VFXAudio;
+    public Slider SFXAudio;
     public Slider MusicAudio;
 
     #endregion
@@ -20,12 +20,12 @@ public class OptionsMenu : MonoBehaviour
     #region Audio Values
 
     public AudioSource MasterAudioSource;
-    public AudioSource VFXAudioSource;
+    public AudioSource SFXAudioSource;
     public AudioSource MusicAudioSource;
 
     public AudioMixer MasterMixerGroup;
     public AudioMixer MusicGroup;
-    public AudioMixer VFXGroupMusic;
+    public AudioMixer SFXGroupMusic;
 
     #endregion
 
@@ -42,14 +42,6 @@ public class OptionsMenu : MonoBehaviour
     void Start()
     {
 
-        MasterAudio.maxValue = 1;
-        MusicAudio.maxValue = 1;
-        VFXAudio.maxValue = 1;
-
-
-        MasterAudio.minValue = 0;
-        MusicAudio.minValue = 0;
-        VFXAudio.minValue = 0;
 
     }
 
@@ -71,10 +63,10 @@ public class OptionsMenu : MonoBehaviour
     }
 
 
-    public void SetVFXSound(float soundLevel)
+    public void SetSFXSound(float soundLevel)
     {
 
-        VFXGroupMusic.SetFloat("VFXVolume", VFXAudio.value);
+        SFXGroupMusic.SetFloat("SFXVolume", SFXAudio.value);
 
     }
 

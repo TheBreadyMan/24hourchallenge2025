@@ -37,6 +37,8 @@ public class Pause : MonoBehaviour
             PlayerUI.SetActive(false);
             PauseScreen.SetActive(true);
             Time.timeScale = 0;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
 
 
         }
@@ -45,16 +47,19 @@ public class Pause : MonoBehaviour
     }
 
 
-    void Resume()
+    public void Resume()
     {
 
         Time.timeScale = 1;
         PauseScreen.SetActive(false);
         PlayerUI.SetActive(true);
 
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
     }
 
-    void OptionsMenu()
+    public void OptionsMenu()
     {
 
         PauseScreen.SetActive(false);
@@ -62,7 +67,7 @@ public class Pause : MonoBehaviour
 
     }
 
-    void BackToMenu()
+   public void BackToMenu()
     {
 
         Time.timeScale = 1;
@@ -74,7 +79,7 @@ public class Pause : MonoBehaviour
 
     }
 
-   void Quit()
+   public void Quit()
     {
 
         Application.Quit();
