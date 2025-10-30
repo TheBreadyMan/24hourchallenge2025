@@ -13927,8 +13927,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2005619703}
-  - component: {fileID: 2005619702}
-  - component: {fileID: 2005619701}
   - component: {fileID: 2005619704}
   m_Layer: 2
   m_Name: MargeArgue
@@ -13937,40 +13935,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2005619701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2005619700}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 899ba9c0082ab3341b9e6a86d6f10c3c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 48fd3492584d85c469536b79c7d7845c, type: 3}
---- !u!65 &2005619702
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2005619700}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 13.45, y: 8.64, z: 9.39}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &2005619703
 Transform:
   m_ObjectHideFlags: 0
@@ -13980,7 +13944,7 @@ Transform:
   m_GameObject: {fileID: 2005619700}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 475.42, y: 6.21, z: 439.13}
+  m_LocalPosition: {x: 475.42, y: 6.21, z: 448.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13998,7 +13962,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: 8ce1ae151bb72e4498d8652e9fdcdf0b, type: 2}
   m_audioClip: {fileID: 8300000, guid: 48fd3492584d85c469536b79c7d7845c, type: 3}
   m_Resource: {fileID: 8300000, guid: 48fd3492584d85c469536b79c7d7845c, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -14007,7 +13971,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 11.286682
+  MinDistance: 21.14682
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
