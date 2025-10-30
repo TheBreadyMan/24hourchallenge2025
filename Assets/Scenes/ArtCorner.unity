@@ -13916,6 +13916,73 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9043722817503094880, guid: 72a879671e8d7584bbdd56c6b4db3bd1, type: 3}
   m_PrefabInstance: {fileID: 2004461239}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2005619700
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2005619703}
+  - component: {fileID: 2005619702}
+  - component: {fileID: 2005619701}
+  m_Layer: 2
+  m_Name: MargeArgue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2005619701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005619700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 899ba9c0082ab3341b9e6a86d6f10c3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: 8b21d4eff6bcc5e45aec5ebdd6d2c6d7, type: 3}
+--- !u!65 &2005619702
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005619700}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 13.45, y: 8.64, z: 9.39}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &2005619703
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2005619700}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 475.42, y: 6.21, z: 439.13}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2011014230
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15467,3 +15534,4 @@ SceneRoots:
   - {fileID: 1135827209}
   - {fileID: 699843933}
   - {fileID: 334472650}
+  - {fileID: 2005619703}
