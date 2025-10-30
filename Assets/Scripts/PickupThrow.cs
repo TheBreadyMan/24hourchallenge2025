@@ -51,7 +51,7 @@ namespace UnityStandardAssets.Utility // This is a modified version of the Stand
 
             // We need to actually hit an object
             RaycastHit hit = new RaycastHit();
-            if (!Physics.Raycast(mainCamera.ScreenPointToRay(Input.mousePosition).origin, mainCamera.ScreenPointToRay(Input.mousePosition).direction, out hit, 3, Physics.DefaultRaycastLayers))
+            if (!Physics.Raycast(mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()).origin, mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()).direction, out hit, 3, Physics.DefaultRaycastLayers))
             {
                 return;
             }
@@ -99,7 +99,7 @@ namespace UnityStandardAssets.Utility // This is a modified version of the Stand
             while (PlayerPickUp.IsPressed())
             {
                 //Debug.Log("m_sprintJoint " + m_SpringJoint.name);
-                var ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+                var ray = mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
                 GrabSpringJoint.transform.position = ray.GetPoint(distance);
                 //Debug.Log("Layer: " + m_SpringJoint.transform.gameObject.layer);
                 HeldObject.layer = 6;
