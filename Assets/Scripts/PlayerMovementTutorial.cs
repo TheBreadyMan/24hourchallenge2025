@@ -57,7 +57,7 @@ public class PlayerMovementTutorial : MonoBehaviour
 
         // Read input
         Vector2 input = moveAction.action.ReadValue<Vector2>();
-        Vector3 move = (Orientation.forward * input.x + Orientation.right * input.y);
+        Vector3 move = (Orientation.forward * input.y + Orientation.right * input.x);
         move = Vector3.ClampMagnitude(move, 1f);
 
         if (move != Vector3.zero)
