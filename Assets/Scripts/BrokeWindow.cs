@@ -20,6 +20,15 @@ public class BrokeWindow : MonoBehaviour
 
     #endregion
 
+    #region Objects
+
+    public GameObject BrokenWindowPieces;
+
+
+
+
+    #endregion
+
     public void Start()
     {
 
