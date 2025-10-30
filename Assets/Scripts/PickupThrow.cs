@@ -43,7 +43,6 @@ namespace UnityStandardAssets.Utility // This is a modified version of the Stand
 
             if (!PlayerPickUp.IsPressed()) //Make sure the user pressed the mouse down
             {
-                Debug.Log("MousePressed");
                 return;
             }
 
