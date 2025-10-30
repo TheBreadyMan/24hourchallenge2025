@@ -159,11 +159,8 @@ GameObject:
   - component: {fileID: 4973400555698908027}
   - component: {fileID: 265833210079237222}
   - component: {fileID: 370815430070122311}
-  - component: {fileID: 4778219926889442558}
-  - component: {fileID: 3913066730228232948}
   - component: {fileID: 5402723031157313925}
   - component: {fileID: 3582195717421683904}
-  - component: {fileID: 146755502796042263}
   m_Layer: 3
   m_Name: Body
   m_TagString: Untagged
@@ -362,45 +359,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4778219926889442558
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3658041434467271879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eeec0bfb00e56d74ebebe5f325be0432, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _playerInput: {fileID: 265833210079237222}
-  PauseScreen: {fileID: 0}
-  OptionScreen: {fileID: 0}
-  PlayerUI: {fileID: 0}
---- !u!114 &3913066730228232948
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3658041434467271879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b0cd6bc30eec8343b8e8c586f9e7d3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  panic: {fileID: 0}
-  _playerInput: {fileID: 0}
-  PlayerDebug:
-    m_Name: Player Debug
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 050399b1-62e9-43c4-9587-3ce98c1fe00f
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
 --- !u!114 &5402723031157313925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -530,20 +488,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &146755502796042263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3658041434467271879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1606981245df93e4d8f07df0e206ea1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FollowPlayerSound: {fileID: 3582195717421683904}
-  sounds: []
 --- !u!1 &4855086767788022910
 GameObject:
   m_ObjectHideFlags: 0
