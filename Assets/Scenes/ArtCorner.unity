@@ -5277,6 +5277,10 @@ PrefabInstance:
       propertyPath: m_Height
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 873525466189325100, guid: e8059fae8a1c42b4fa6ea1e98684fedf, type: 3}
+      propertyPath: m_Height
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3119499472052709720, guid: e8059fae8a1c42b4fa6ea1e98684fedf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 432
@@ -12910,6 +12914,10 @@ PrefabInstance:
     - target: {fileID: 228414449789968690, guid: 63fabfdad8492f449adef13be3d5449f, type: 3}
       propertyPath: m_Name
       value: jackoLantern (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1889967042813794293, guid: 63fabfdad8492f449adef13be3d5449f, type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3877217819992860069, guid: 63fabfdad8492f449adef13be3d5449f, type: 3}
       propertyPath: m_LocalScale.x
