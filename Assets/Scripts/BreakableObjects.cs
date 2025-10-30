@@ -31,7 +31,7 @@ public class BreakableObjects : MonoBehaviour
 
             Instantiate(BrokenForm);
             BreakSource.Play();
-            Instantiate(BrokenVfx);
+            //Instantiate(BrokenVfx);
 
             Destroy(Self);
 
