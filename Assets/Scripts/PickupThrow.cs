@@ -13,7 +13,7 @@ namespace UnityStandardAssets.Utility // This is a modified version of the Stand
         const float c_AngularDamping = 5.0f;
         const float c_MaxDistance = 0.2f;
         const float c_MinDistance = 7f;
-        [SerializeField] private float LaunchPower = 1f;
+        [SerializeField] private float LaunchPower = 5f;
 
         private SpringJoint GrabSpringJoint;
         private float OldLinearDamping = 1f;
