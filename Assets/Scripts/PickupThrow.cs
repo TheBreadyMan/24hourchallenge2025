@@ -12,7 +12,7 @@ namespace UnityStandardAssets.Utility // This is a modified version of the Stand
         const float c_LinearDamping = 10.0f;
         const float c_AngularDamping = 5.0f;
         const float c_MaxDistance = 0.2f;
-        const float c_MinDistance = 1.5f;
+        const float c_MinDistance = 7f;
         [SerializeField] private float LaunchPower = 1f;
 
         private SpringJoint GrabSpringJoint;
@@ -49,7 +49,7 @@ namespace UnityStandardAssets.Utility // This is a modified version of the Stand
             var mainCamera = Camera.main;
 
             RaycastHit hit = new RaycastHit();
-            if (!Physics.Raycast(mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()).origin, mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()).direction, out hit, 3, Physics.DefaultRaycastLayers))
+            if (!Physics.Raycast(mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()).origin, mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()).direction, out hit, 5, Physics.DefaultRaycastLayers))
             {
                 return;
             }
