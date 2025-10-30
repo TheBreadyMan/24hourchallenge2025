@@ -23,7 +23,11 @@ public class CamLook : MonoBehaviour
     public void Awake()
     {
 
+<<<<<<< Updated upstream
         controller = gameObject.GetComponent<CharacterController>();
+=======
+        
+>>>>>>> Stashed changes
 
 
     }

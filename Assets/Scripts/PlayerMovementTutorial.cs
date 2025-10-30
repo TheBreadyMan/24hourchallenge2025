@@ -11,6 +11,10 @@ public class PlayerMovementTutorial : MonoBehaviour
     private float gravityValue = -9.81f;
 
     private CharacterController controller;
+    private Rigidbody playerBody;
+
+    public Transform Orientation;
+
     private Vector3 playerVelocity;
     private bool groundedPlayer;
 
@@ -20,7 +24,7 @@ public class PlayerMovementTutorial : MonoBehaviour
 
     private void Awake()
     {
-        controller = gameObject.AddComponent<CharacterController>();
+        controller = gameObject.GetComponent<CharacterController>();
     }
 
     private void OnEnable()
@@ -35,6 +39,14 @@ public class PlayerMovementTutorial : MonoBehaviour
         jumpAction.action.Disable();
     }
 
+    public void Start()
+    {
+
+        playerBody = GetComponent<Rigidbody>();
+        playerBody.freezeRotation = true;
+
+    }
+
     void Update()
     {
         groundedPlayer = controller.isGrounded;
@@ -45,7 +57,7 @@ public class PlayerMovementTutorial : MonoBehaviour
 
         // Read input
         Vector2 input = moveAction.action.ReadValue<Vector2>();
-        Vector3 move = new Vector3(input.x, 0, input.y);
+        Vector3 move = (Orientation.forward * input.x + Orientation.right * input.y);
         move = Vector3.ClampMagnitude(move, 1f);
 
         if (move != Vector3.zero)
