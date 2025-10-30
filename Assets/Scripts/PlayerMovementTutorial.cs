@@ -6,9 +6,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovementTutorial : MonoBehaviour
 {
-    private float playerSpeed = 5.0f;
-    private float playerSprintSpeed = 10f;
-    private float jumpHeight = 1.5f;
+    private float playerSpeed = 20.0f;
+    private float playerSprintSpeed = 30f;
+    private float jumpHeight = 3f;
     private float gravityValue = -9.81f;
 
     private CharacterController controller;
@@ -82,7 +82,7 @@ public class PlayerMovementTutorial : MonoBehaviour
         else
         {
 
-            playerSpeed = 5f;
+            playerSpeed = 20f;
 
         }
 

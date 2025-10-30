@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PanicMeter : MonoBehaviour
 {
@@ -51,11 +52,17 @@ public class PanicMeter : MonoBehaviour
             Timer = Timer - Time.deltaTime;
             TimerSlider.value = Timer;
 
-            if (Timer <= 0 )
+            if (Timer <= 0  && PanicValue >= (MaxPanicValue *0.5))
             {
 
+                SceneManager.LoadScene("YouWin");
 
 
+            }
+            else if (Timer <= 0  && PanicValue <= (MaxPanicValue * 0.5))
+            {
+
+                SceneManager.LoadScene("YouLose");
 
             }
 
