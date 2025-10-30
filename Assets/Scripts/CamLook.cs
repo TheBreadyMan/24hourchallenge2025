@@ -65,19 +65,4 @@ public class CamLook : MonoBehaviour
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
