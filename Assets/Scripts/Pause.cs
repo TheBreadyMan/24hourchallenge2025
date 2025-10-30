@@ -9,12 +9,14 @@ public class Pause : MonoBehaviour
 
     public GameObject PauseScreen;
     public GameObject OptionScreen;
+    public GameObject PlayerUI;
 
     public void Awake()
     {
 
         _playerInput = GetComponent<PlayerInput>();
         PlayerPause = _playerInput.actions["Pause"];
+        
 
 
     }
@@ -22,6 +24,7 @@ public class Pause : MonoBehaviour
     {
 
         PauseScreen.SetActive(false);
+        PlayerUI.SetActive(true);
 
     }
 
@@ -31,7 +34,7 @@ public class Pause : MonoBehaviour
         
         if(PlayerPause.IsPressed())
         {
-
+            PlayerUI.SetActive(false);
             PauseScreen.SetActive(true);
             Time.timeScale = 0;
 
@@ -47,6 +50,7 @@ public class Pause : MonoBehaviour
 
         Time.timeScale = 1;
         PauseScreen.SetActive(false);
+        PlayerUI.SetActive(true);
 
     }
 
@@ -62,6 +66,8 @@ public class Pause : MonoBehaviour
     {
 
         Time.timeScale = 1;
+
+        PlayerUI.SetActive(true);
 
         SceneManager.LoadScene("MainMenu");
 
