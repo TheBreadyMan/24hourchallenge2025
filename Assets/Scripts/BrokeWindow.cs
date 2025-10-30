@@ -23,6 +23,7 @@ public class BrokeWindow : MonoBehaviour
     #region Objects
 
     public GameObject BrokenWindowPieces;
+    public GameObject Self;
 
 
 
@@ -76,7 +77,9 @@ public class BrokeWindow : MonoBehaviour
 
             }
 
+            Instantiate(BrokenWindowPieces);
 
+            Destroy(Self);
 
 
         }

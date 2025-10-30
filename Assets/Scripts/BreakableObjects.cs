@@ -3,29 +3,25 @@ using UnityEngine;
 public class BreakableObjects : MonoBehaviour
 {
 
+    #region GameObjects
+
     public GameObject BrokenForm;
+    public GameObject Self;
     public GameObject BrokenVfx;
 
+    #endregion
+
+    #region Audio
+
+
+    public AudioClip BreakSound;
+    public AudioSource BreakSource;
 
 
 
+    #endregion
 
 
-
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-
-
-    }
 
 
     void OnCollisionEnter(Collision collision)
@@ -33,7 +29,14 @@ public class BreakableObjects : MonoBehaviour
         if (collision.relativeVelocity.magnitude > 5)
         {
 
-            
+            Instantiate(BrokenForm);
+            BreakSource.Play();
+            Instantiate(BrokenVfx);
+
+            Destroy(Self);
+
+
+
 
         }
             
