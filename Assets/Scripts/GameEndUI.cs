@@ -1,28 +1,18 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameEndUI : MonoBehaviour
 {
-    
-
-
-    public void Return()
+    private void Start()
     {
+        StartCoroutine("Timer");
+    }
+
+    IEnumerator Timer()
+    {
+        yield return new WaitForSeconds(55f);
 
         SceneManager.LoadScene("MainMenu");
-
-
     }
-
-    public void QuitG()
-    {
-
-        Application.Quit();
-
-    }
-
-
-
-
-
 }
