@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/TestingPickUp.unity
+- path: Assets/Scenes/ArtCorner.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
